@@ -1,0 +1,14 @@
+.avatar{
+  //noinspection SassScssUnresolvedMixin
+  @include border-radius(50%);
+  border: 10px solid $color1;// #d0cfce;
+  //box-shadow: inset 3px 3px $color1;
+  box-shadow: 0 0 1px black; /* Параметры тени */
+  $avatar-size: 135px;
+  width: $avatar-size;
+  height: $avatar-size;
+  overflow: hidden;
+  img{
+    width: 100%;
+  }
+}

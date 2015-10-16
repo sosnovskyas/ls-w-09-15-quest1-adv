@@ -1,0 +1,7 @@
+.adress-bar {
+  &_item {
+    // li
+    overflow: auto;
+    text-overflow: ellipsis;
+  }
+}

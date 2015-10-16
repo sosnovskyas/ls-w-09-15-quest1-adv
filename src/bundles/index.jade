@@ -1,0 +1,16 @@
+extends templates/layout
+
+block title
+    - var title = "главная страница"
+
+block main-menu
+    - var page = "index"
+
+block content
+    .box
+        h2 content
+        include ../components/avatar/avatar
+    .box
+        h2 skills
+    .box
+        h2 studies

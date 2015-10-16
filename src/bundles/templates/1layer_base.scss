@@ -1,0 +1,99 @@
+/*
+    VARIABLES
+*/
+
+$browser-context: 16; // Default
+
+$color1: #f7f6f5; //gray
+
+/*
+    IMPORTS
+*/
+
+//noinspection CssUnknownTarget
+@import "compass";
+// SPRITES
+//noinspection CssUnknownTarget
+@import "compass/utilities/sprites";
+//noinspection CssUnknownTarget
+@import 'sprite/*.png';
+//noinspection SassScssUnresolvedMixin
+@include all-sprite-sprites;
+// for sticky footer
+//noinspection CssUnknownTarget
+@import "compass/layout";
+// for center alignment in footer
+//noinspection CssUnknownTarget
+@import "compass/css3";
+//noinspection CssUnknownTarget
+@import "compass/css3/inline-block";
+
+/*
+    MIXINS
+*/
+//noinspection CssInvalidFunction
+@mixin insert_sprite($sprite-name){
+  height: sprite-sprite-height($sprite-name);
+  width: sprite-sprite-width($sprite-name);
+  //noinspection SassScssUnresolvedMixin
+  @include sprite-sprite($sprite-name);
+}
+
+// translation pixel to em
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1em;
+}
+
+@mixin set_font($font, $pixel, $color) {
+  font-family: $font, sans-serif;
+  font-size: em($pixel);
+  color: $color;
+}
+
+/*
+    STYLES
+*/
+.clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  /* для IE6-7 */
+  zoom: 1;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a{
+    text-decoration: none;
+  }
+}
+
+.box{
+  //noinspection SassScssUnresolvedMixin
+  @include border-radius(3px);
+  background-color: $color1;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.sidebar{
+  float: left;
+}
+
+.content{
+  float: left;
+}

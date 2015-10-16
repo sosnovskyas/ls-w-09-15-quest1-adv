@@ -1,0 +1,22 @@
+.main-menu{
+  @extend .box;
+  &_item{
+    background: linear-gradient(to top, #e9e8e8, #f7f7f7);
+    &-active{
+      background: linear-gradient(to top, #3fb79a, #7de8cd);
+      a{
+        color: #1e7465;
+      }
+    }
+    :hover{
+      background: linear-gradient(to top, #bebdbd, #e4e3e3);
+      a{
+
+      }
+    }
+  }
+  a{
+    display: block;
+    color: #727070;
+  }
+}

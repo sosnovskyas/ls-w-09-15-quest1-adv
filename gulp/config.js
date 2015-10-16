@@ -1,7 +1,6 @@
 //var prod = './build/prod';
-var dev = './build/dev';
+var dev = './build/dev/';
 var src = './src';
-var jsFileList = '/**/*.{js,coffee}';
 
 module.exports = {
   developer: {
@@ -14,9 +13,10 @@ module.exports = {
     ],
     sequenceBuild: [
       'dev-jade',
-      'dev-js-direct',
-      'dev-js-vendor',
-      'dev-js-custom',
+      //'dev-scss',
+      //'dev-js-direct',
+      //'dev-js-vendor',
+      //'dev-js-custom',
       'dev-compass',
       'dev-fonts',
       'dev-img'
@@ -39,7 +39,7 @@ module.exports = {
     dest: dev
   },
   devScss: {
-    src: src + '/custom.scss',
+    src: src + '/bundels/templates/custom.scss',
     watch: src + '/**/*.scss',
     dest: dev,
     concatFile: 'custom.css',
@@ -49,7 +49,11 @@ module.exports = {
     }
   },
   devCompass: {
-    src: src + '/custom.scss',
+    src: src + '/bundles/templates/custom.scss',
+    sass: 'src/bundles/templates',
+    image: 'src/img',
+    generated_images_path: 'build/dev/i',
+    sourcemap: true,
     watch: src + '/**/*.scss',
     dest: dev,
     concatFile: 'custom.css'
@@ -63,7 +67,6 @@ module.exports = {
 
   devCssVendor: {
     src: [
-          './bower_components/normalize-css/normalize.css'
         ],
     dest: dev,
     concatFile: 'vendor.css',
@@ -74,14 +77,13 @@ module.exports = {
   },
   devJsDirect: {
     src: [
-      'bower_components/html5shiv/dist/html5shiv.js',
       'bower_components/respond/dest/respond.min.js',
       'node_modules/modernizr/modernizr.js'
     ],
     dest: dev
   },
   devJsCustom: {
-    src: src + jsFileList,
+    src: src + '/**/*.{js,coffee}',
     concatFile: 'custom.js',
     dest: dev
   },
@@ -100,7 +102,7 @@ module.exports = {
   },
   devJade: {
     watch: src + '/**/*.jade',
-    src: src + '/*.jade',
+    src: src + '/bundles/*.jade',
     dest: dev
   },
   devBrowsersync: {

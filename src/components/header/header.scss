@@ -1,0 +1,13 @@
+.header {
+  //background: $box_bg_color;
+  min-height: 116px;
+  min-width: 960px;
+  max-width: 1200px;
+  .logo{
+    float: left;
+  }
+  .social{
+    //margin-top: 35px;
+    float: right;
+  }
+}

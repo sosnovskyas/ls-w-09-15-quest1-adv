@@ -1,12 +1,20 @@
 .header {
   //background: $box_bg_color;
-  min-height: 116px;
+  background-color: #727070;
+  border-bottom: 7px solid #fff;
+
+  margin-bottom: 36px;
+
+  .wrapper{
   min-width: 960px;
   max-width: 1200px;
-  .logo{
+  margin: 0 auto;
+
+  }
+  .logo-wrap{
     float: left;
   }
-  .social{
+  .social-wrap{
     //margin-top: 35px;
     float: right;
   }

@@ -3,6 +3,6 @@
 ul.main-menu
   each val, file in mainMenuItems
     if page == file
-      li.main-menu_item-active: a(href=file+'.html')= val
+      li.main-menu_item.active: a(href=file+'.html')= val
     else
       li.main-menu_item: a(href=file+'.html')= val

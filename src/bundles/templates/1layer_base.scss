@@ -59,6 +59,16 @@ $color1: #f7f6f5; //gray
 /*
     STYLES
 */
+body{
+  width: 100%;
+}
+
+.bg{
+  //noinspection CssUnknownTarget
+  background-image: url("/i/bg.png");
+  background-size: 100% auto;
+}
+
 .clearfix {
   &:before,
   &:after {
@@ -87,13 +97,34 @@ ul{
   @include border-radius(3px);
   background-color: $color1;
   overflow: hidden;
-  margin: 10px;
+  .header-1{
+    //background-color: ;
+    background: linear-gradient(to top, #a8a7a7, #7c7979);
+    @include set_font("open_sansbold", 21, #eeedec);
+    padding: 15px;
+  }
 }
 
+.block{
+  @extend .box;
+  margin-bottom: 36px;
+  &_content{
+    padding: 36px;
+  }
+}
+
+.middle{
+  min-width: 960px;
+  max-width: 960px;
+  margin: 0 auto;
+}
 .sidebar{
   float: left;
+  width: 250px;
+  margin-right: 60px;
 }
 
 .content{
-  float: left;
+  float: right;
+  width: 650px;
 }

@@ -1,3 +1,25 @@
 .social{
-  background: #aaa;
+  padding-top: 10px;
+  &_icon{
+    display: inline-block;
+    margin: 10px 0 22px 4px;
+    //$social-icon__size: 40px;
+    //width: $social-icon__size;
+    //height: $social-icon__size;
+    &-text{
+      display: none;
+    }
+    .vk{
+      @include insert_sprite(vk);
+    }
+    .fb{
+      @include insert_sprite(fb);
+    }
+    .gh{
+      @include insert_sprite(gh);
+    }
+    .tw{
+      @include insert_sprite(tw);
+    }
+  }
 }

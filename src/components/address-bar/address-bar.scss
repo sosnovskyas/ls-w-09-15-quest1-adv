@@ -1,0 +1,70 @@
+.address-bar {
+  @extend .box;
+
+  &_header{
+    background: linear-gradient(to top, #dfb866, #f4ce82);
+    @include set_font("open_sanssemibold", 14px, #d0982c);
+  }
+
+  &_item {
+    // li
+    overflow: auto;
+    text-overflow: ellipsis;
+    padding: 0 0 0 20px;
+    background: linear-gradient(to top, #f7f6f6, #fff);
+
+    &:hover{
+      background: linear-gradient(to top, #f2e7d0 , #fff);
+    }
+
+    a {
+      display: block;
+      padding: 10px 10px 10px 50px;
+      margin: 0;
+      @include set_font("open_sans", 14px, #727070);
+    }
+
+    &.mail{
+      &:before{
+        content: "";
+        float: left;
+        @include insert_sprite(mail);
+      }
+    }
+    &.skype{
+      &:before{
+        content: "";
+        float: left;
+        @include insert_sprite(skype);
+      }
+    }
+    &.phone{
+      &:before{
+        content: "";
+        float: left;
+        @include insert_sprite(phone);
+      }
+    }
+  }
+}
+//.adress{
+//  &-link{
+//    display: block;
+//    background: linear-gradient(to top, #f7f6f6, #fff);
+//
+//    &:hover{
+//      background: linear-gradient(to top, #f2e7d0, #fff);
+//    }
+//  }
+//  &-header{
+//    background: linear-gradient(to top, #dfb866, #f4ce82);
+//  }
+//  &-mail{
+//  }
+//  &-phone{
+//    background: linear-gradient(to top, #f7f6f6, #fff);
+//  }
+//  &-skype{
+//    background: linear-gradient(to top, #dfb866, #f4ce82);
+//  }
+//}

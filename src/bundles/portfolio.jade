@@ -7,5 +7,10 @@ block main-menu
     - var page = "portfolio"
 
 block content
-    .box
-        h2 portfolio
+    .wrap
+        .box
+            h2 portfolio
+            include ../components/portfolio-item/portfolio-item
+
+        //TODO сделать инлайновыми блоками айтемы портфолио
+            //TODO    inline-block + vertical-align: top
